@@ -1,10 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Button, Flex, Spacer } from "@chakra-ui/react";
 import { GrLinkedin, GrGithub } from "react-icons/gr";
 
-const Body = () => {
+
+const HomePage = () => {
   return (
     <Flex>
+      <Link to="/manifest">Manifest Creation</Link>
       <Spacer />
       <Flex direction="column">
         <h2>Peter Baniuszewicz</h2>
@@ -70,4 +73,4 @@ const Body = () => {
   );
 };
 
-export default Body;
+export default HomePage;
