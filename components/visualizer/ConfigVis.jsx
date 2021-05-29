@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { useEffect } from "react";
-import "../public/highlight.css";
+import "../../public/highlight.css";
 import hljs from "highlight.js/lib/core";
 import javascript from "highlight.js/lib/languages/javascript";
 

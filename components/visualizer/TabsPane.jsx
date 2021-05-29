@@ -1,6 +1,13 @@
 /* eslint-disable react/prop-types */
 import React, { useState, useEffect } from "react";
-import { Box, Center, Radio, RadioGroup, Stack, Spinner } from "@chakra-ui/react";
+import {
+  Box,
+  Center,
+  Radio,
+  RadioGroup,
+  Stack,
+  Spinner,
+} from "@chakra-ui/react";
 
 const TabsPane = (props) => {
   const { currentTab } = props;
@@ -23,7 +30,13 @@ const TabsPane = (props) => {
 
   const displayArray = [];
   const display = () => {
-    if (isLoaded === false) return <Center> <Spinner /> </Center> ;
+    if (isLoaded === false)
+      return (
+        <Center>
+          {" "}
+          <Spinner />{" "}
+        </Center>
+      );
     if (isLoaded === true) return displayArray;
     return <p>Enter URL above to get schema</p>;
   };
@@ -49,9 +62,9 @@ const TabsPane = (props) => {
   });
   return (
     <Box h={300} overflowY="auto">
-    <RadioGroup onChange={setValue} value={value}>
-      <Stack>{display()}</Stack>
-    </RadioGroup>
+      <RadioGroup onChange={setValue} value={value}>
+        <Stack>{display()}</Stack>
+      </RadioGroup>
     </Box>
   );
 };

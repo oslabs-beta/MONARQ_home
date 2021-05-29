@@ -5,7 +5,7 @@ import NavBar from "./NavBar";
 
 const Header = () => {
   return (
-    <Flex align="center">
+    <Flex align="center" bg="lightskyblue">
       <Link to="/">
         <img
           alt="MONARQ Logo"
