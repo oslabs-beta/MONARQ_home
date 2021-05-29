@@ -132,20 +132,21 @@ const Visualizer = () => {
               gqlURL={gqlURL}
               setOperation={setOperation}
             />
-          </Box>
-          <Input
-            placeholder="Enter Default Parameters (Optional)"
-            type="text"
-            id="gqlURL"
-            onChange={(e) => setDefaultParams(e.target.value)}
-          />
 
-          <Button type="button" onClick={() => configArrayBuilder()}>
-            add to config
-          </Button>
-          <Button type="button" onClick={undoConfigArray} disabled={!canUndo}>
-            undo
-          </Button>
+            <Input
+              placeholder="Enter Default Parameters (Optional)"
+              type="text"
+              id="gqlURL"
+              onChange={(e) => setDefaultParams(e.target.value)}
+            />
+
+            <Button type="button" onClick={() => configArrayBuilder()}>
+              add to config
+            </Button>
+            <Button type="button" onClick={undoConfigArray} disabled={!canUndo}>
+              undo
+            </Button>
+          </Box>
         </Box>
       </GridItem>
 
