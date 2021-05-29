@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid, GridItem, Image } from "@chakra-ui/react";
-import Bio from "./Bio";
+import DeveloperBios from "./DeveloperBios";
 import Intro from "./Intro";
 
 const HomePage = () => {
@@ -18,7 +18,7 @@ const HomePage = () => {
         <Intro />
       </GridItem>
       <GridItem rowSpan={1} colSpan={3}>
-        <Bio />
+        <DeveloperBios />
       </GridItem>
     </Grid>
   );
