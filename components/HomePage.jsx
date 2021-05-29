@@ -6,18 +6,18 @@ import Intro from "./Intro";
 const HomePage = () => {
   return (
     <Grid
-      templateRows="repeat(2, 1fr)"
-      templateColumns="repeat(2, 1fr)"
+      templateRows="repeat(3, 1fr)"
+      templateColumns="repeat(3, 1fr)"
       gap={4}
       padding="30px 40px"
     >
-      <GridItem>
-        <Image style={{}} src="../assets/facebook_.JPG" alt="Monarq" />
+      <GridItem rowSpan={2} colSpan={1}>
+        <Image src="../assets/facebook_.JPG" alt="Monarq" />
       </GridItem>
-      <GridItem rowSpan={1} colSpan={1}>
+      <GridItem rowSpan={2} colSpan={2}>
         <Intro />
       </GridItem>
-      <GridItem rowSpan={1} colSpan={2}>
+      <GridItem rowSpan={1} colSpan={3}>
         <Bio />
       </GridItem>
     </Grid>
