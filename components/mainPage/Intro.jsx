@@ -1,18 +1,29 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Text, Box, Flex } from "@chakra-ui/react";
+import { GridItem, Text, Heading } from "@chakra-ui/react";
 
 const Intro = () => {
   return (
-    <Flex justifyContent="center" alignItems="center">
-      <Box>
-        <Text>Allow Your GraphQL API to accept REST API Requests</Text>
-        <Link fontColor="blue" to="/manifest">
-          Manifest Creation
-        </Link>
-        <Text>Download Our NPM Package</Text>
-      </Box>
-    </Flex>
+    <GridItem
+      display="flex"
+      flexDirection="column"
+      justifyContent="space-around"
+      alignItems="center"
+      rowSpan={1}
+      colSpan={2}
+    >
+      <Heading style={{ textAlign: "center" }} textShadow=".5px .5px">
+        Allow Your GraphQL API to accept REST API Requests
+      </Heading>
+      <Text
+        style={{
+          textAlign: "center",
+          maxWidth: "50%",
+        }}
+      >
+        With a Simple Installation of our NPM Package, allow MONARQ to cocoon a
+        REST request, transform, and fly it to your GraphQL API with ease.
+      </Text>
+    </GridItem>
   );
 };
 
