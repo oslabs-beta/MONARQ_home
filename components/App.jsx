@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { ChakraProvider, Grid, GridItem } from "@chakra-ui/react";
-import Header from "./Header";
-import Footer from "./Footer";
-import HomePage from "./HomePage";
-import Visualizer from "./Visualizer";
+import Header from "./mainPage/Header";
+import Footer from "./mainPage/Footer";
+import HomePage from "./mainPage/HomePage";
+import Visualizer from "./visualizer/Visualizer";
 
 function App() {
   return (
