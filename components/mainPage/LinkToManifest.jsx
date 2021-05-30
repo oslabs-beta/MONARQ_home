@@ -24,6 +24,7 @@ const LinkToManifest = () => {
         </Text>
         <Button
           boxShadow="base"
+          textColor="brand.gray"
           style={{
             padding: "10px 10px",
           }}

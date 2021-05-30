@@ -13,7 +13,7 @@ function App() {
       <ChakraProvider theme={theme}>
         <Grid
           templateRows="repeat(3, 1fr)"
-          height="100vh"
+          height="101vh"
           width="100vw"
           bgGradient="linear(to-tl, brand.whiteT, brand.darkBl)"
         >

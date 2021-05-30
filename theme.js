@@ -17,6 +17,7 @@ const theme = extendTheme({
       darkBl: "#2C5282",
       mainBr: "#744210",
       whiteT: "#EDF2F7",
+      gray: "#2D3748",
     },
   },
   fonts: {

@@ -11,7 +11,7 @@ const Footer = () => {
       alignItems="space-between"
       textColor="brand.darkBl"
       style={{
-        position: "fixed",
+        position: "absolute",
         bottom: "0",
         left: "0",
         right: "0",

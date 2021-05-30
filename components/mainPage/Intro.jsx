@@ -12,7 +12,6 @@ const Intro = () => {
       colSpan={2}
     >
       <Heading
-        boxShadow="base"
         textColor="brand.darkBl"
         style={{ textAlign: "center" }}
         textShadow="1px 1px"
