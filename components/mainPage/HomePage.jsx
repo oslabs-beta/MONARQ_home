@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid, GridItem, Image } from "@chakra-ui/react";
-import Bio from "./Bio";
+import DeveloperBios from "./DeveloperBios";
 import Intro from "./Intro";
 import LinkToManifest from "./LinkToManifest";
 import CodeBlockNPM from "./CodeBlockCopy";
@@ -26,7 +26,7 @@ const HomePage = () => {
       <LinkToManifest />
       <CodeBlockNPM />
       <GridItem rowSpan={1} colSpan={3}>
-        <Bio />
+        <DeveloperBios />
       </GridItem>
     </Grid>
   );
