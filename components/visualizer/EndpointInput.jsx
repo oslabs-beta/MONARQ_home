@@ -15,12 +15,12 @@ const EndpointInput = (props) => {
   return (
     <div>
       <Input
-        placeholder="enter desired REST API endpoint"
+        placeholder="(ex: /characters)"
         type="text"
         onChange={(evt) => endpointHandler(evt)}
       />
       <Select
-        placeholder="Choose Method"
+        placeholder="Choose HTTP Method"
         name="method"
         id="method"
         onChange={(evt) => methodHandler(evt)}

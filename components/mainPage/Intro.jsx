@@ -6,7 +6,7 @@ const Intro = () => {
   return (
     <Flex justifyContent="center" alignItems="center">
       <Box>
-        <Text bg="brand.100">Allow Your GraphQL API to accept REST API Requests</Text>
+        <Text>Allow Your GraphQL API to accept REST API Requests</Text>
         <Link fontColor="blue" to="/manifest">
           Manifest Creation
         </Link>

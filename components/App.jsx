@@ -5,12 +5,11 @@ import Header from "./mainPage/Header";
 import Footer from "./mainPage/Footer";
 import HomePage from "./mainPage/HomePage";
 import Visualizer from "./visualizer/Visualizer";
-import theme from "../theme.js";
 
 function App() {
   return (
     <BrowserRouter>
-      <ChakraProvider theme={theme}>
+      <ChakraProvider>
         <Grid
           templateRows="repeat(3, 1fr)"
           templateColumns="repeat(2, 1fr)"

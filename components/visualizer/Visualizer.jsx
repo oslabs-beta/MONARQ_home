@@ -9,8 +9,10 @@ import {
   AlertDescription,
   Box,
   CloseButton,
+  Flex,
   Grid,
   GridItem,
+  Heading,
   Input,
   Button,
   HStack,
@@ -105,27 +107,37 @@ const Visualizer = () => {
   useEffect(() => {}, [error]);
 
   return (
-    <Grid templateColumns="repeat(3, 1fr)" gap={2}>
-      <GridItem colSpan={3}>{errorBox()}</GridItem>
-      <GridItem>
-        <Box h={500}>
-          <EndpointInput setMethod={setMethod} setEndpoint={setEndpoint} />
-          <HStack>
-            <Input
-              placeholder="Enter GraphQL URL"
-              type="text"
-              id="gqlURL"
-              onChange={(e) => setGqlURL(e.target.value)}
-            />
-            <Button
-              type="button"
-              onClick={() => {
-                getSchema.current.getIntrospection();
-              }}
-            >
-              get schema
-            </Button>
-          </HStack>
+    <Grid templateColumns="2fr 3fr" templateRows="50px 1fr" gap={2}>
+     {/* <GridItem colSpan={3}>{errorBox()}</GridItem> */}
+      <GridItem colSpan={1} rowSpan={1}>
+        <Heading marginLeft={5}>Manifest Builder</Heading>
+      </GridItem>
+      <GridItem colStart={1} colEnd={2} rowStart={2}>
+        <Flex h={500} marginLeft={5} direction="column">
+          <Box h={100} marginBottom={10}>
+            <Box>Step 1: Enter your GraphQL URL to access the schema</Box>
+            <HStack>
+                <Input
+                  placeholder="(ex: https://rickandmortyapi.com/graphql)"
+                  type="text"
+                  id="gqlURL"
+                  onChange={(e) => setGqlURL(e.target.value)}
+                />
+                <Button
+                  type="button"
+                  onClick={() => {
+                    getSchema.current.getIntrospection();
+                  }}
+                >
+                  Load Schema
+                </Button>
+              </HStack>
+            </Box>
+            <Box h={100} marginBottom={10}>
+              <Box>Step 2: Enter a desired REST API endpoint</Box>
+              <EndpointInput setMethod={setMethod} setEndpoint={setEndpoint} />
+            </Box>
+          
           <Box h={350}>
             <Operations
               passedRef={getSchema}
@@ -147,10 +159,10 @@ const Visualizer = () => {
               undo
             </Button>
           </Box>
-        </Box>
+        </Flex>
       </GridItem>
 
-      <GridItem colSpan={2}>
+      <GridItem colStart={2} colSpan={1} rowStart={2} rowSpan={1}>
         <Box h={500} bg="#282b2e" borderRadius={9}>
           {" "}
           ;

@@ -38,7 +38,7 @@ const TabsPane = (props) => {
         </Center>
       );
     if (isLoaded === true) return displayArray;
-    return <p>Enter URL above to get schema</p>;
+    return <p>Enter GraphQL URL above to get schema</p>;
   };
 
   Object.keys(operationsObject).forEach((key) => {

@@ -10,7 +10,8 @@ const Operations = (props) => {
   const { passedRef } = props;
   const introspectionQuery = {
     query:
-      "{__schema {queryType {name fields {name}}mutationType {name fields {name}}}}",
+      // "{__schema {queryType {name fields {name}}mutationType {name fields {name}}}}",
+      "{__schema {queryType {name fields {name type {name kind ofType {name kind}}}}mutationType {name fields {name}}}}",
   };
   const [introspectedTypes, setIntrospectedTypes] = useState({});
   const [currentTab, setCurrentTab] = useState("");
@@ -28,6 +29,7 @@ const Operations = (props) => {
     });
     const response = await rawResponse.json();
     setIsLoaded(true);
+    console.log('introspection data raw', response.data);
     // eslint-disable-next-line no-underscore-dangle
     setIntrospectedTypes(response.data.__schema);
   };
