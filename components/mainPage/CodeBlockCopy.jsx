@@ -15,6 +15,7 @@ const CodeBlockNPM = () => {
         style={{
           padding: "10px 10px",
         }}
+        textColor="brand.darkBl"
       >
         Download Our NPM Package
       </Text>

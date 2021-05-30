@@ -18,6 +18,7 @@ const LinkToManifest = () => {
           style={{
             padding: "10px 10px",
           }}
+          textColor="brand.darkBl"
         >
           Need Help Making Your Manifest Object?
         </Text>

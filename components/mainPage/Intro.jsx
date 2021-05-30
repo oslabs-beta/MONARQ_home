@@ -11,7 +11,14 @@ const Intro = () => {
       rowSpan={1}
       colSpan={2}
     >
-      <Heading style={{ textAlign: "center" }} textShadow=".5px .5px">
+      <Heading
+        boxShadow="base"
+        textColor="brand.darkBl"
+        style={{ textAlign: "center" }}
+        textShadow="1px 1px"
+        p="10px 10px"
+        maxWidth="75%"
+      >
         Allow Your GraphQL API to accept REST API Requests
       </Heading>
       <Text
@@ -19,6 +26,7 @@ const Intro = () => {
           textAlign: "center",
           maxWidth: "50%",
         }}
+        textColor="brand.lightBl"
       >
         With a Simple Installation of our NPM Package, allow MONARQ to cocoon a
         REST request, transform, and fly it to your GraphQL API with ease.

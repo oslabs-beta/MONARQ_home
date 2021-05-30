@@ -13,15 +13,14 @@ function App() {
       <ChakraProvider theme={theme}>
         <Grid
           templateRows="repeat(3, 1fr)"
-          templateColumns="repeat(2, 1fr)"
           height="100vh"
           width="100vw"
           bgGradient="linear(to-tl, brand.whiteT, brand.darkBl)"
         >
-          <GridItem rowSpan={1} colSpan={2}>
+          <GridItem rowSpan={1}>
             <Header />
           </GridItem>
-          <GridItem rowSpan={1} colSpan={2}>
+          <GridItem rowSpan={1}>
             <Switch>
               <Route exact path="/">
                 <HomePage />
@@ -31,7 +30,7 @@ function App() {
               </Route>
             </Switch>
           </GridItem>
-          <GridItem rowSpan={1} colSpan={2}>
+          <GridItem rowSpan={1}>
             <Footer />
           </GridItem>
         </Grid>

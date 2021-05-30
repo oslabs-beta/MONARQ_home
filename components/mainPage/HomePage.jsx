@@ -11,14 +11,15 @@ const HomePage = () => {
       templateRows="repeat(3, 1fr)"
       templateColumns="repeat(3, 1fr)"
       gap={4}
-      padding="30px 40px"
     >
       <GridItem
         rowSpan={2}
         colSpan={1}
         display="flex"
+        direction="row"
         justifyContent="center"
         alignItems="center"
+        p="10px 10px"
       >
         <Image boxShadow="base" src="../assets/Insta.JPG" alt="Monarq" />
       </GridItem>
