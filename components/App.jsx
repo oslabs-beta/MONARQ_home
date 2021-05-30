@@ -5,17 +5,18 @@ import Header from "./mainPage/Header";
 import Footer from "./mainPage/Footer";
 import HomePage from "./mainPage/HomePage";
 import Visualizer from "./visualizer/Visualizer";
+import theme from "../theme";
 
 function App() {
   return (
     <BrowserRouter>
-      <ChakraProvider>
+      <ChakraProvider theme={theme}>
         <Grid
           templateRows="repeat(3, 1fr)"
           templateColumns="repeat(2, 1fr)"
-          gap={4}
           height="100vh"
           width="100vw"
+          bgGradient="linear(to-tl, brand.whiteT, brand.darkBl)"
         >
           <GridItem rowSpan={1} colSpan={2}>
             <Header />
