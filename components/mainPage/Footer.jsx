@@ -5,7 +5,7 @@ import { ImLab } from "react-icons/im";
 const Footer = () => {
   const year = new Date();
   return (
-    <Flex align="center" bg="lightskyblue">
+    <Flex align="center" bg="lightskyblue" h={100}>
       <h2>PATH Developers {year.getFullYear()}</h2>
       <Spacer />
       <a href="https://opensourcelabs.io/">
