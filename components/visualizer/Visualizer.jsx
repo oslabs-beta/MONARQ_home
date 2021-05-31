@@ -20,6 +20,7 @@ import {
 import Operations from "./Operations";
 import EndpointInput from "./EndpointInput";
 import ConfigVis from "./ConfigVis";
+import Instructions from "./Instructions";
 
 const Visualizer = () => {
   const [operation, setOperation] = useState("");
@@ -32,6 +33,8 @@ const Visualizer = () => {
   const [configArray, { set: setConfigArray, undo: undoConfigArray, canUndo }] =
     useUndo([]);
   const { present: presentConfigArray } = configArray;
+  const [isLoaded, setIsLoaded] = useState();
+  const [getStarted, setStarted] = useState(false);
 
   const getSchema = useRef(null);
 
@@ -79,7 +82,6 @@ const Visualizer = () => {
     setConfigString(joinedConfigString);
   };
   const errorBox = () => {
-    if (error === true)
       return (
         <Alert status="error">
           <AlertIcon />
@@ -106,16 +108,23 @@ const Visualizer = () => {
   }, [configArray]);
   useEffect(() => {}, [error]);
 
+
+
   return (
     <Grid templateColumns="2fr 3fr" templateRows="50px 1fr" gap={2}>
-     {/* <GridItem colSpan={3}>{errorBox()}</GridItem> */}
-      <GridItem colSpan={1} rowSpan={1}>
-        <Heading marginLeft={5}>Manifest Builder</Heading>
-      </GridItem>
+      {error
+        ? <GridItem colSpan={3}>{errorBox()}</GridItem> 
+        : <GridItem colSpan={1} rowSpan={1}>
+            <Heading marginLeft={5}>Manifest Builder</Heading>
+          </GridItem>
+      }
       <GridItem colStart={1} colEnd={2} rowStart={2}>
-        <Flex h={500} marginLeft={5} direction="column">
-          <Box h={100} marginBottom={10}>
-            <Box>Step 1: Enter your GraphQL URL to access the schema</Box>
+        {!getStarted
+        ? <Instructions setStarted={setStarted}/>
+        :
+        <Flex marginLeft={5} direction="column">
+          <Box marginBottom={10}>
+            <Box marginBottom={3}><strong>Step 1:</strong> Enter your GraphQL URL to access the schema</Box>
             <HStack>
                 <Input
                   placeholder="(ex: https://rickandmortyapi.com/graphql)"
@@ -133,33 +142,40 @@ const Visualizer = () => {
                 </Button>
               </HStack>
             </Box>
-            <Box h={100} marginBottom={10}>
-              <Box>Step 2: Enter a desired REST API endpoint</Box>
+            <Box marginBottom={10}>
+              <Box marginBottom={3}><strong>Step 2:</strong> Enter a desired REST API endpoint</Box>
               <EndpointInput setMethod={setMethod} setEndpoint={setEndpoint} />
             </Box>
           
-          <Box h={350}>
+          <Flex direction="column">
+            <Box marginBottom={3}><strong>Step 3:</strong> Select the GraphQL operation to be executed for requests received at the endpoint</Box>
             <Operations
               passedRef={getSchema}
               gqlURL={gqlURL}
               setOperation={setOperation}
+              isLoaded={isLoaded}
+              setIsLoaded={setIsLoaded}
             />
-
-            <Input
+            {isLoaded
+              ? <Box>
+              <Input
               placeholder="Enter Default Parameters (Optional)"
               type="text"
               id="gqlURL"
               onChange={(e) => setDefaultParams(e.target.value)}
             />
-
             <Button type="button" onClick={() => configArrayBuilder()}>
               add to config
             </Button>
             <Button type="button" onClick={undoConfigArray} disabled={!canUndo}>
               undo
             </Button>
-          </Box>
+            </Box>
+              : <Box></Box>
+            }
+          </Flex>
         </Flex>
+        }
       </GridItem>
 
       <GridItem colStart={2} colSpan={1} rowStart={2} rowSpan={1}>

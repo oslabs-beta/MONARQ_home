@@ -38,7 +38,7 @@ const TabsPane = (props) => {
         </Center>
       );
     if (isLoaded === true) return displayArray;
-    return <p>Enter GraphQL URL above to get schema</p>;
+    return <p><i>Enter GraphQL URL above to view operations</i></p>;
   };
 
   Object.keys(operationsObject).forEach((key) => {
@@ -61,9 +61,9 @@ const TabsPane = (props) => {
     }
   });
   return (
-    <Box h={300} overflowY="auto">
-      <RadioGroup onChange={setValue} value={value}>
-        <Stack>{display()}</Stack>
+    <Box maxH={50} overflowY="auto">
+      <RadioGroup onChange={setValue} value={value} overflowY="auto">
+        <Stack overflowY="auto">{display()}</Stack>
       </RadioGroup>
     </Box>
   );
