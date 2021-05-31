@@ -46,7 +46,11 @@ const DeveloperBios = () => {
     );
   });
 
-  return <Flex justify="space-evenly">{outputBios}</Flex>;
+  return (
+    <Flex alignItems="center" justifyContent="space-evenly">
+      {outputBios}
+    </Flex>
+  );
 };
 
 export default DeveloperBios;

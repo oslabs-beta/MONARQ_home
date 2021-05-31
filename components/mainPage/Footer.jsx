@@ -6,22 +6,17 @@ const Footer = () => {
   const year = new Date();
   return (
     <Flex
-      direction="row"
-      justifyContent="center"
-      alignItems="space-between"
-      textColor="brand.darkBl"
-      style={{
-        position: "absolute",
-        bottom: "0",
-        left: "0",
-        right: "0",
-      }}
+      flexDirection="row"
+      justifyContent="flex-end"
+      alignItems="center"
+      textColor="brand.whiteT"
+      bg="brand.darkBl"
     >
-      <Box>
+      <Box p="0px 20px">
         <h2>PATH Developers {year.getFullYear()}</h2>
       </Box>
       <Spacer />
-      <Box>
+      <Box p="0px 20px">
         <a href="https://opensourcelabs.io/">
           <Button rightIcon={<ImLab />} variant="ghost">
             OS-Labs

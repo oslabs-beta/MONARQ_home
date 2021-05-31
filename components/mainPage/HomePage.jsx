@@ -16,7 +16,7 @@ const HomePage = () => {
         rowSpan={2}
         colSpan={1}
         display="flex"
-        direction="row"
+        flexDirection="row"
         justifyContent="center"
         alignItems="center"
         p="10px 10px"
@@ -26,7 +26,17 @@ const HomePage = () => {
       <Intro />
       <LinkToManifest />
       <CodeBlockNPM />
-      <GridItem rowSpan={1} colSpan={3}>
+      <GridItem
+        rowSpan={1}
+        colSpan={3}
+        margin="10px 10px"
+        bg="gray.50"
+        boxShadow="sm"
+        display="flex"
+        flexDirection="column"
+        justifyContent="center"
+        alignItems="space-evenly"
+      >
         <DeveloperBios />
       </GridItem>
     </Grid>

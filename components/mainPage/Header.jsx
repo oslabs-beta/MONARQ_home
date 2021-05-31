@@ -6,18 +6,21 @@ import NavBar from "./NavBar";
 const Header = () => {
   return (
     <Flex
-      direction="row"
+      flexDirection="row"
       justifyContent="center"
       alignItems="center"
       textColor="brand.whiteT"
+      bg="brand.darkBl"
     >
       <Link to="/">
-        <img
-          alt="MONARQ Logo"
-          src="public/TempLogo.PNG"
-          height="75"
-          width="55"
-        />
+        <Box p="0px 20px">
+          <img
+            alt="MONARQ Logo"
+            src="public/TempLogo.PNG"
+            height="75"
+            width="55"
+          />
+        </Box>
       </Link>
       <Link to="/">
         <Box p="10px 50px">

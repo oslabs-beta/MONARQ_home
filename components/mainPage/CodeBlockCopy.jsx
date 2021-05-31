@@ -10,12 +10,16 @@ const CodeBlockNPM = () => {
       alignItems="center"
       rowSpan={1}
       colSpan={1}
+      bg="gray.50"
+      margin="0px 20px"
+      boxShadow="sm"
     >
       <Text
         style={{
           padding: "10px 10px",
         }}
         textColor="brand.darkBl"
+        fontSize="large"
       >
         Download Our NPM Package
       </Text>

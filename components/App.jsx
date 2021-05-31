@@ -12,15 +12,13 @@ function App() {
     <BrowserRouter>
       <ChakraProvider theme={theme}>
         <Grid
-          templateRows="repeat(3, 1fr)"
-          height="101vh"
-          width="100vw"
+          templateRows="repeat(9, 1fr)"
           bgGradient="linear(to-tl, brand.whiteT, brand.darkBl)"
         >
           <GridItem rowSpan={1}>
             <Header />
           </GridItem>
-          <GridItem rowSpan={1}>
+          <GridItem rowSpan={7}>
             <Switch>
               <Route exact path="/">
                 <HomePage />
@@ -30,7 +28,13 @@ function App() {
               </Route>
             </Switch>
           </GridItem>
-          <GridItem rowSpan={1}>
+          <GridItem
+            rowSpan={1}
+            display="flex"
+            flexDirection="column"
+            justifyContent="flex-end"
+            alignContent="center"
+          >
             <Footer />
           </GridItem>
         </Grid>

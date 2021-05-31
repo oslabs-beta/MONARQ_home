@@ -12,6 +12,9 @@ const LinkToManifest = () => {
       rowSpan={1}
       colSpan={1}
       textAlign="center"
+      bg="gray.50"
+      margin="0px 20px"
+      boxShadow="sm"
     >
       <Link to="/manifest">
         <Text
@@ -19,6 +22,7 @@ const LinkToManifest = () => {
             padding: "10px 10px",
           }}
           textColor="brand.darkBl"
+          fontSize="large"
         >
           Need Help Making Your Manifest Object?
         </Text>
