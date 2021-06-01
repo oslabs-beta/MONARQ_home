@@ -60,20 +60,21 @@ const Visualizer = (props) => {
     presentConfigArray.forEach((point) => {
       newConfigString.push(`\n\t'${point[0].endpoint}': {`);
       point[0].method.forEach((meth) => {
-        if (defaultParams !== "") {
+        console.log(meth[1])
+        if (meth[1].defaultParams !== "") {
           newConfigString.push(`
-              ${meth[0]}: {
-                operation: ${operation},
-                defaultParams: {${defaultParams}}
-              }
-            },
+          ${meth[0]}: {
+                  operation: ${meth[1].operation},
+                  defaultParams: {${meth[1].defaultParams}}
+                  }
+                },
             `);
         } else {
           newConfigString.push(`            
           ${meth[0]}: {
-            operation: ${operation},
-            },
-          },
+                 operation: ${meth[1].operation},
+                }
+              },
         `);
         }
       });
@@ -82,23 +83,23 @@ const Visualizer = (props) => {
     setConfigString(joinedConfigString);
   };
   const errorBox = () => {
-      return (
-        <Alert status="error">
-          <AlertIcon />
-          <AlertTitle mr={2}>Missing Form Information</AlertTitle>
-          <AlertDescription mr={1}>
-            Endpoints, methods, and operations are required fields.
-          </AlertDescription>
-          <CloseButton
-            position="absolute"
-            right="8px"
-            top="8px"
-            onClick={() => {
-              setError(false);
-            }}
-          />
-        </Alert>
-      );
+    return (
+      <Alert status="error">
+        <AlertIcon />
+        <AlertTitle mr={2}>Missing Form Information</AlertTitle>
+        <AlertDescription mr={1}>
+          Endpoints, methods, and operations are required fields.
+        </AlertDescription>
+        <CloseButton
+          position="absolute"
+          right="8px"
+          top="8px"
+          onClick={() => {
+            setError(false);
+          }}
+        />
+      </Alert>
+    );
   };
 
   useEffect(() => {
@@ -108,24 +109,47 @@ const Visualizer = (props) => {
   }, [configArray]);
   useEffect(() => {}, [error]);
 
-
-
   return (
-    <Grid templateColumns="2fr 3fr" templateRows="50px 1fr" gap={2} color="brand.whiteT" marginTop={5}>
-      {error
-        ? <GridItem colSpan={3}>{errorBox()}</GridItem> 
-        : <GridItem colSpan={1} rowSpan={1}>
-            <Heading marginLeft={5} textColor="brand.whiteT" fontFamily="'Noto Sans', sans-serif">Manifest Builder</Heading>
-          </GridItem>
-      }
-      <GridItem colStart={1} colEnd={2} rowStart={2} marginLeft={5} bg="brand.mainBl" border="solid 1px" borderColor="brand.mainO" borderRadius="10px">
-        {!getStarted
-        ? <Instructions setStarted={setStarted}/>
-        :
-        <Flex marginLeft={5} marginRight={5} marginTop={5} direction="column">
-          <Box marginBottom={10}>
-            <Box marginBottom={3}><strong>Step 1:</strong> Enter your GraphQL URL to access the schema</Box>
-            <HStack>
+    <Grid
+      templateColumns="2fr 3fr"
+      templateRows="50px 1fr"
+      gap={2}
+      color="brand.whiteT"
+      marginTop={5}
+    >
+      {error ? (
+        <GridItem colSpan={3}>{errorBox()}</GridItem>
+      ) : (
+        <GridItem colSpan={1} rowSpan={1}>
+          <Heading
+            marginLeft={5}
+            textColor="brand.whiteT"
+            fontFamily="'Noto Sans', sans-serif"
+          >
+            Manifest Builder
+          </Heading>
+        </GridItem>
+      )}
+      <GridItem
+        colStart={1}
+        colEnd={2}
+        rowStart={2}
+        marginLeft={5}
+        bg="brand.mainBl"
+        border="solid 1px"
+        borderColor="brand.mainO"
+        borderRadius="10px"
+      >
+        {!getStarted ? (
+          <Instructions setStarted={setStarted} />
+        ) : (
+          <Flex marginLeft={5} marginRight={5} marginTop={5} direction="column">
+            <Box marginBottom={10}>
+              <Box marginBottom={3}>
+                <strong>Step 1:</strong> Enter your GraphQL URL to access the
+                schema
+              </Box>
+              <HStack>
                 <Input
                   placeholder="(ex: https://rickandmortyapi.com/graphql)"
                   type="text"
@@ -146,45 +170,73 @@ const Visualizer = (props) => {
               </HStack>
             </Box>
             <Box marginBottom={10}>
-              <Box marginBottom={3}><strong>Step 2:</strong> Enter a desired REST API endpoint</Box>
+              <Box marginBottom={3}>
+                <strong>Step 2:</strong> Enter a desired REST API endpoint
+              </Box>
               <EndpointInput setMethod={setMethod} setEndpoint={setEndpoint} />
             </Box>
-          
-          <Flex direction="column">
-            <Box marginBottom={3}><strong>Step 3:</strong> Select the GraphQL operation to be executed for requests received at the endpoint</Box>
-            <Operations
-              passedRef={getSchema}
-              gqlURL={gqlURL}
-              setOperation={setOperation}
-              isLoaded={isLoaded}
-              setIsLoaded={setIsLoaded}
-            />
-            {isLoaded
-              ? <Box marginTop={5}>
-              <Box><i><strong>Optional:</strong></i> if the selected operation has default parameters, enter them below in key-value pair format</Box>
-                <Input
-                  placeholder="(ex: page:1, pageSize:20)"
-                  type="text"
-                  id="gqlURL"
-                  onChange={(e) => setDefaultParams(e.target.value)}
-                />
-              <Box marginTop={10} marginBottom={5} >
-                <Button type="button" onClick={() => configArrayBuilder()} marginRight={5} colorScheme="orange">
-                  Add to Manifest
-                </Button>
-                <Button type="button" onClick={undoConfigArray} disabled={!canUndo} colorScheme="grey">
-                  Undo
-                </Button>
+
+            <Flex direction="column">
+              <Box marginBottom={3}>
+                <strong>Step 3:</strong> Select the GraphQL operation to be
+                executed for requests received at the endpoint
               </Box>
-            </Box>
-              : <Box></Box>
-            }
+              <Operations
+                passedRef={getSchema}
+                gqlURL={gqlURL}
+                setOperation={setOperation}
+                isLoaded={isLoaded}
+                setIsLoaded={setIsLoaded}
+              />
+              {isLoaded ? (
+                <Box marginTop={5}>
+                  <Box>
+                    <i>
+                      <strong>Optional:</strong>
+                    </i>{" "}
+                    if the selected operation has default parameters, enter them
+                    below in key-value pair format
+                  </Box>
+                  <Input
+                    placeholder="(ex: page:1, pageSize:20)"
+                    type="text"
+                    id="gqlURL"
+                    onChange={(e) => setDefaultParams(e.target.value)}
+                  />
+                  <Box marginTop={10} marginBottom={5}>
+                    <Button
+                      type="button"
+                      onClick={() => configArrayBuilder()}
+                      marginRight={5}
+                      colorScheme="orange"
+                    >
+                      Add to Manifest
+                    </Button>
+                    <Button
+                      type="button"
+                      onClick={undoConfigArray}
+                      disabled={!canUndo}
+                      colorScheme="grey"
+                    >
+                      Undo
+                    </Button>
+                  </Box>
+                </Box>
+              ) : (
+                <Box/>
+              )}
+            </Flex>
           </Flex>
-        </Flex>
-        }
+        )}
       </GridItem>
 
-      <GridItem colStart={2} colSpan={1} rowStart={2} rowSpan={1} marginRight={5}>
+      <GridItem
+        colStart={2}
+        colSpan={1}
+        rowStart={2}
+        rowSpan={1}
+        marginRight={5}
+      >
         <Box h={500} bg="#282b2e" borderRadius={9}>
           {" "}
           ;
