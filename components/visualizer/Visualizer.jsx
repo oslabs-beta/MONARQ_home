@@ -60,20 +60,21 @@ const Visualizer = (props) => {
     presentConfigArray.forEach((point) => {
       newConfigString.push(`\n\t'${point[0].endpoint}': {`);
       point[0].method.forEach((meth) => {
-        if (defaultParams !== "") {
+        console.log(meth[1]);
+        if (meth[1].defaultParams !== "") {
           newConfigString.push(`
-              ${meth[0]}: {
-                operation: ${operation},
-                defaultParams: {${defaultParams}}
-              }
-            },
+          ${meth[0]}: {
+                  operation: ${meth[1].operation},
+                  defaultParams: {${meth[1].defaultParams}}
+                  }
+                },
             `);
         } else {
           newConfigString.push(`            
           ${meth[0]}: {
-            operation: ${operation},
-            },
-          },
+                 operation: ${meth[1].operation},
+                }
+              },
         `);
         }
       });
@@ -222,7 +223,7 @@ const Visualizer = (props) => {
                   </Box>
                 </Box>
               ) : (
-                <Box></Box>
+                <Box />
               )}
             </Flex>
           </Flex>
