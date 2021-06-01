@@ -22,7 +22,7 @@ import EndpointInput from "./EndpointInput";
 import ConfigVis from "./ConfigVis";
 import Instructions from "./Instructions";
 
-const Visualizer = () => {
+const Visualizer = (props) => {
   const [operation, setOperation] = useState("");
   const [endpoint, setEndpoint] = useState("");
   const [method, setMethod] = useState("");
@@ -33,9 +33,9 @@ const Visualizer = () => {
   const [configArray, { set: setConfigArray, undo: undoConfigArray, canUndo }] =
     useUndo([]);
   const { present: presentConfigArray } = configArray;
-  const [isLoaded, setIsLoaded] = useState();
+  // const [isLoaded, setIsLoaded] = useState();
   const [getStarted, setStarted] = useState(false);
-
+  const { isLoaded, setIsLoaded } = props;
   const getSchema = useRef(null);
 
   const configArrayBuilder = () => {
@@ -157,19 +157,22 @@ const Visualizer = () => {
               setIsLoaded={setIsLoaded}
             />
             {isLoaded
-              ? <Box>
-              <Input
-              placeholder="Enter Default Parameters (Optional)"
-              type="text"
-              id="gqlURL"
-              onChange={(e) => setDefaultParams(e.target.value)}
-            />
-            <Button type="button" onClick={() => configArrayBuilder()}>
-              add to config
-            </Button>
-            <Button type="button" onClick={undoConfigArray} disabled={!canUndo}>
-              undo
-            </Button>
+              ? <Box marginTop={5}>
+              <Box><i><strong>Optional:</strong></i> if the selected operation has default parameters, enter them below in key-value pair format</Box>
+                <Input
+                  placeholder="(ex: page:1, pageSize:20)"
+                  type="text"
+                  id="gqlURL"
+                  onChange={(e) => setDefaultParams(e.target.value)}
+                />
+              <Box marginTop={10}>
+                <Button type="button" onClick={() => configArrayBuilder()} marginRight={5}>
+                  Add to Manifest
+                </Button>
+                <Button type="button" onClick={undoConfigArray} disabled={!canUndo}>
+                  Undo
+                </Button>
+              </Box>
             </Box>
               : <Box></Box>
             }

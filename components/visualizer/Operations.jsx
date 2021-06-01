@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { useState, useEffect, useImperativeHandle } from "react";
+import { Flex } from "@chakra-ui/react";
 
 import Tabs from "./Tabs";
 import TabsPane from "./TabsPane";

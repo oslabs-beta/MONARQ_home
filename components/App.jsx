@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { ChakraProvider, Grid, GridItem } from "@chakra-ui/react";
 import Header from "./mainPage/Header";
@@ -6,16 +6,19 @@ import Footer from "./mainPage/Footer";
 import HomePage from "./mainPage/HomePage";
 import Visualizer from "./visualizer/Visualizer";
 
-function App() {
+const App = () => {
+  const [isLoaded, setIsLoaded] = useState();
+  
   return (
     <BrowserRouter>
       <ChakraProvider>
         <Grid
-          templateRows="repeat(3, 1fr)"
+          templateRows="auto 1fr auto"
           templateColumns="repeat(2, 1fr)"
           gap={4}
           height="100vh"
           width="100vw"
+          isLoaded={isLoaded}
         >
           <GridItem rowSpan={1} colSpan={2}>
             <Header />
@@ -26,11 +29,11 @@ function App() {
                 <HomePage />
               </Route>
               <Route path="/manifest">
-                <Visualizer />
+                <Visualizer isLoaded={isLoaded} setIsLoaded={setIsLoaded}/>
               </Route>
             </Switch>
           </GridItem>
-          <GridItem rowSpan={1} colSpan={2}>
+          <GridItem rowStart={3} rowEnd={4} colSpan={2}>
             <Footer />
           </GridItem>
         </Grid>

@@ -17,6 +17,7 @@ const Tabs = (props) => {
           key={type.toString().toLowerCase()}
           id={type}
           onClick={(e) => handleClick(e.currentTarget.id)}
+          marginRight={5}
         >
           {Object.values(type)}
         </Button>

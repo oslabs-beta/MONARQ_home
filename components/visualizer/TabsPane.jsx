@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import {
   Box,
   Center,
+  Flex,
   Radio,
   RadioGroup,
   Stack,
@@ -10,10 +11,7 @@ import {
 } from "@chakra-ui/react";
 
 const TabsPane = (props) => {
-  const { currentTab } = props;
-  const { operations } = props;
-  const { setOperation } = props;
-  const { isLoaded } = props;
+  const { currentTab, operations, setOperation, isLoaded } = props;
 
   const [value, setValue] = useState("");
 
@@ -52,8 +50,9 @@ const TabsPane = (props) => {
                 value={`${operation.name}`}
                 name="operation"
                 key={`${operation.name}Select`}
+                marginRight={5}
               >
-                {operation.name}
+                {`[${operation.name}]`}
               </Radio>
             );
         })
@@ -61,11 +60,13 @@ const TabsPane = (props) => {
     }
   });
   return (
-    <Box maxH={50} overflowY="auto">
-      <RadioGroup onChange={setValue} value={value} overflowY="auto">
-        <Stack overflowY="auto">{display()}</Stack>
+    <Flex>
+    <Box overflowY="scroll" maxH="200px">
+      <RadioGroup onChange={setValue} value={value}>
+        {display()}
       </RadioGroup>
     </Box>
+    </Flex>
   );
 };
 
