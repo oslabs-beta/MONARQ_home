@@ -21,16 +21,16 @@ app.get("/", (req, res) => {
   return res.sendFile(path.resolve(__dirname, "../index.html"));
 });
 
-app.get("/public/TempLogo.PNG", (req, res) => {
+app.get("/public/Logo.png", (req, res) => {
   return res
     .status(200)
-    .sendFile(path.resolve(__dirname, "../public/TempLogo.PNG"));
+    .sendFile(path.resolve(__dirname, "../public/Logo.png"));
 });
 
-app.get("/assets/Insta.JPG", (req, res) => {
+app.get("/public/Diagram.png", (req, res) => {
   return res
     .status(200)
-    .sendFile(path.resolve(__dirname, "../assets/Insta.JPG"));
+    .sendFile(path.resolve(__dirname, "../public/Diagram.png"));
 });
 // serving bundle.js files from dist folder
 
