@@ -6,16 +6,24 @@ import Footer from "./mainPage/Footer";
 import HomePage from "./mainPage/HomePage";
 import Visualizer from "./visualizer/Visualizer";
 import theme from "../theme";
+// import "@fontsource/sansita/scss/700.css";
+// import "@fontsource/manjari/scss/400.css";
 
 const App = () => {
   const [isLoaded, setIsLoaded] = useState();
   
   return (
     <BrowserRouter>
-      <ChakraProvider>
+      <ChakraProvider theme={theme}>
         <Grid
-          templateRows="repeat(9, 1fr)"
-          bgGradient="linear(to-tl, brand.whiteT, brand.darkBl)"
+          // templateRows="repeat(9, 1fr)"
+          templateRows="auto 1fr 1fr 1fr 1fr 1fr 1fr 1fr auto"
+          height="100vh"
+          width="100vw"
+          gap={4}
+          fontFamily="'Noto Sans', sans-serif"
+          backgroundColor="brand.darkBl"
+          isLoaded={isLoaded}
         >
           <GridItem rowSpan={1}>
             <Header />
@@ -31,11 +39,11 @@ const App = () => {
             </Switch>
           </GridItem>
           <GridItem
-            rowSpan={1}
-            display="flex"
-            flexDirection="column"
-            justifyContent="flex-end"
-            alignContent="center"
+            rowStart={9}
+            rowEnd={10}
+            position="fixed" 
+            bottom="0px"
+            width="100%"
           >
             <Footer />
           </GridItem>

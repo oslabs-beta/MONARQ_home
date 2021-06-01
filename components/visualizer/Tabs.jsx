@@ -18,6 +18,9 @@ const Tabs = (props) => {
           id={type}
           onClick={(e) => handleClick(e.currentTarget.id)}
           marginRight={5}
+          variant="ghost"
+          colorScheme="orange"
+  
         >
           {Object.values(type)}
         </Button>

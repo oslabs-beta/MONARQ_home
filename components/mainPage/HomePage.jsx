@@ -30,7 +30,8 @@ const HomePage = () => {
         rowSpan={1}
         colSpan={3}
         margin="10px 10px"
-        bg="gray.50"
+        bg="brand.darkBl"
+        color="brand.whiteT"
         boxShadow="sm"
         display="flex"
         flexDirection="column"

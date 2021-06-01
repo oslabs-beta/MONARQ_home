@@ -111,18 +111,18 @@ const Visualizer = (props) => {
 
 
   return (
-    <Grid templateColumns="2fr 3fr" templateRows="50px 1fr" gap={2}>
+    <Grid templateColumns="2fr 3fr" templateRows="50px 1fr" gap={2} color="brand.whiteT" marginTop={5}>
       {error
         ? <GridItem colSpan={3}>{errorBox()}</GridItem> 
         : <GridItem colSpan={1} rowSpan={1}>
-            <Heading marginLeft={5}>Manifest Builder</Heading>
+            <Heading marginLeft={5} textColor="brand.whiteT" fontFamily="'Noto Sans', sans-serif">Manifest Builder</Heading>
           </GridItem>
       }
-      <GridItem colStart={1} colEnd={2} rowStart={2}>
+      <GridItem colStart={1} colEnd={2} rowStart={2} marginLeft={5} bg="brand.mainBl" border="solid 1px" borderColor="brand.mainO" borderRadius="10px">
         {!getStarted
         ? <Instructions setStarted={setStarted}/>
         :
-        <Flex marginLeft={5} direction="column">
+        <Flex marginLeft={5} marginRight={5} marginTop={5} direction="column">
           <Box marginBottom={10}>
             <Box marginBottom={3}><strong>Step 1:</strong> Enter your GraphQL URL to access the schema</Box>
             <HStack>
@@ -137,6 +137,9 @@ const Visualizer = (props) => {
                   onClick={() => {
                     getSchema.current.getIntrospection();
                   }}
+                  colorScheme="orange"
+                  paddingRight={10}
+                  paddingLeft={10}
                 >
                   Load Schema
                 </Button>
@@ -165,11 +168,11 @@ const Visualizer = (props) => {
                   id="gqlURL"
                   onChange={(e) => setDefaultParams(e.target.value)}
                 />
-              <Box marginTop={10}>
-                <Button type="button" onClick={() => configArrayBuilder()} marginRight={5}>
+              <Box marginTop={10} marginBottom={5} >
+                <Button type="button" onClick={() => configArrayBuilder()} marginRight={5} colorScheme="orange">
                   Add to Manifest
                 </Button>
-                <Button type="button" onClick={undoConfigArray} disabled={!canUndo}>
+                <Button type="button" onClick={undoConfigArray} disabled={!canUndo} colorScheme="grey">
                   Undo
                 </Button>
               </Box>
@@ -181,7 +184,7 @@ const Visualizer = (props) => {
         }
       </GridItem>
 
-      <GridItem colStart={2} colSpan={1} rowStart={2} rowSpan={1}>
+      <GridItem colStart={2} colSpan={1} rowStart={2} rowSpan={1} marginRight={5}>
         <Box h={500} bg="#282b2e" borderRadius={9}>
           {" "}
           ;
