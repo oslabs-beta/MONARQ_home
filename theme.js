@@ -1,15 +1,12 @@
 import { extendTheme } from "@chakra-ui/react";
 
 const theme = extendTheme({
-  config: {
-    // initialColorMode: 'dark'
-  },
   styles: {
     global: {},
   },
   colors: {
     brand: {
-      mainO: "#ED8936",
+      mainO: "#f7931e",
       lightO: "#FBD38D",
       darkO: "#DD6B20",
       mainBl: "#2C5282",
@@ -19,10 +16,6 @@ const theme = extendTheme({
       whiteT: "#EDF2F7",
       gray: "#2D3748",
     },
-  },
-  fonts: {
-    // heading: "Sansita",
-    // body: "Manjari",
   },
 });
 

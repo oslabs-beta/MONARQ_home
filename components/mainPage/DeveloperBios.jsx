@@ -47,7 +47,7 @@ const DeveloperBios = () => {
   });
 
   return (
-    <Flex alignItems="center" justifyContent="space-evenly">
+    <Flex alignItems="center" justifyContent="space-evenly" width="100%" marginBottom="50px">
       {outputBios}
     </Flex>
   );

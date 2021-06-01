@@ -14,7 +14,7 @@ const Intro = () => {
       borderRadius="10px"
       border="solid 1px"
       borderColor="brand.mainO"
-      margin="5px 20px"
+      margin="5px 10px"
       boxShadow="sm"
     >
       <Heading
@@ -22,7 +22,7 @@ const Intro = () => {
         style={{ textAlign: "center" }}
         p="10px 10px"
         maxWidth="80%"
-        fontFamily="'Noto Sans', sans-serif"
+        fontFamily="'Lexend Zetta', sans-serif"
       >
         Enjoy the benefits of <i>both</i> GraphQL and REST 
       </Heading>
