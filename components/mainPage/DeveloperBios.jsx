@@ -1,4 +1,4 @@
-import { Flex, Spacer } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 import React from "react";
 import Bio from "./Bio";
 
@@ -46,7 +46,11 @@ const DeveloperBios = () => {
     );
   });
 
-  return <Flex justify="space-evenly">{outputBios}</Flex>;
+  return (
+    <Flex alignItems="center" justifyContent="space-evenly">
+      {outputBios}
+    </Flex>
+  );
 };
 
 export default DeveloperBios;
