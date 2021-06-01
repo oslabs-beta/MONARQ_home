@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, GridItem, Image } from "@chakra-ui/react";
+import { Box, Grid, GridItem, Heading, Image } from "@chakra-ui/react";
 import DeveloperBios from "./DeveloperBios";
 import Intro from "./Intro";
 import LinkToManifest from "./LinkToManifest";
@@ -36,8 +36,9 @@ const HomePage = () => {
         display="flex"
         flexDirection="column"
         justifyContent="center"
-        alignItems="space-evenly"
+        alignItems="center"
       >
+        <Heading paddingTop="50px" paddingBottom="40px" fontFamily="'Lexend Zetta', sans-serif">CONTRIBUTORS</Heading>
         <DeveloperBios />
       </GridItem>
     </Grid>

@@ -114,7 +114,7 @@ const Visualizer = (props) => {
     <Grid templateColumns="2fr 3fr" templateRows="50px 1fr" gap={2} color="brand.whiteT" marginTop={5}>
       {error
         ? <GridItem colSpan={3}>{errorBox()}</GridItem> 
-        : <GridItem colSpan={1} rowSpan={1}>
+        : <GridItem colSpan={2} rowSpan={1} display="flex">
             <Heading marginLeft={5} textColor="brand.whiteT" fontFamily="'Lexend Zetta', sans-serif">Manifest Builder</Heading>
           </GridItem>
       }
