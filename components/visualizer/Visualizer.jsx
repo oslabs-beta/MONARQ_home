@@ -33,7 +33,6 @@ const Visualizer = (props) => {
   const [configArray, { set: setConfigArray, undo: undoConfigArray, canUndo }] =
     useUndo([]);
   const { present: presentConfigArray } = configArray;
-  // const [isLoaded, setIsLoaded] = useState();
   const [getStarted, setStarted] = useState(false);
   const { isLoaded, setIsLoaded } = props;
   const getSchema = useRef(null);
@@ -62,17 +61,17 @@ const Visualizer = (props) => {
       point[0].method.forEach((meth) => {
         if (meth[1].defaultParams !== "") {
           newConfigString.push(`
-          ${meth[0]}: {
-                  operation: ${meth[1].operation},
-                  defaultParams: {${meth[1].defaultParams}}
+                  ${meth[0]}: {
+                        operation: ${meth[1].operation},
+                        defaultParams: {${meth[1].defaultParams}}
                   }
-                },
+              },
             `);
         } else {
           newConfigString.push(`            
-          ${meth[0]}: {
-                 operation: ${meth[1].operation},
-                }
+                  ${meth[0]}: {
+                        operation: ${meth[1].operation},
+                  }
               },
         `);
         }
@@ -119,11 +118,11 @@ const Visualizer = (props) => {
       {error ? (
         <GridItem colSpan={3}>{errorBox()}</GridItem>
       ) : (
-        <GridItem colSpan={1} rowSpan={1}>
+        <GridItem colSpan={2} rowSpan={1}>
           <Heading
             marginLeft={5}
             textColor="brand.whiteT"
-            fontFamily="'Noto Sans', sans-serif"
+            fontFamily="'Lexend Zetta', sans-serif"
           >
             Manifest Builder
           </Heading>
@@ -142,7 +141,7 @@ const Visualizer = (props) => {
         {!getStarted ? (
           <Instructions setStarted={setStarted} />
         ) : (
-          <Flex marginLeft={5} marginRight={5} marginTop={5} direction="column">
+          <Flex marginLeft={5} marginRight={5} marginTop={5} marginBottom={20} direction="column">
             <Box marginBottom={10}>
               <Box marginBottom={3}>
                 <strong>Step 1:</strong> Enter your GraphQL URL to access the

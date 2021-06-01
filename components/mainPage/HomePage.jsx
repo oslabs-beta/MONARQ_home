@@ -20,8 +20,17 @@ const HomePage = () => {
         justifyContent="center"
         alignItems="center"
         p="10px 10px"
+        flexGrow="1"
       >
-        <Image boxShadow="base" src="../assets/Insta.JPG" alt="Monarq" />
+        <Image 
+        boxShadow="base" 
+        src="../public/Diagram.png" 
+        alt="Monarq" 
+        borderRadius="10px" 
+        border="solid 1px" 
+        borderColor="brand.mainO"
+        height="441px"
+        width="548px"/>
       </GridItem>
       <Intro />
       <LinkToManifest />

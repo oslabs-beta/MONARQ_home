@@ -6,8 +6,6 @@ import Footer from "./mainPage/Footer";
 import HomePage from "./mainPage/HomePage";
 import Visualizer from "./visualizer/Visualizer";
 import theme from "../theme";
-// import "@fontsource/sansita/scss/700.css";
-// import "@fontsource/manjari/scss/400.css";
 
 const App = () => {
   const [isLoaded, setIsLoaded] = useState();
@@ -16,8 +14,7 @@ const App = () => {
     <BrowserRouter>
       <ChakraProvider theme={theme}>
         <Grid
-          // templateRows="repeat(9, 1fr)"
-          templateRows="auto 1fr 1fr 1fr 1fr 1fr 1fr 1fr auto"
+          templateRows="repeat(9, 1fr)"
           height="100vh"
           width="100vw"
           gap={4}

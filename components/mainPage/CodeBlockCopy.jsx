@@ -16,6 +16,7 @@ const CodeBlockNPM = () => {
       boxShadow="sm"
       border="solid 1px"
       borderColor="brand.mainO"
+      height="80%"
     >
       <Text
         style={{
