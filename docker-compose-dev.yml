@@ -1,0 +1,10 @@
+version: "3"
+services:
+    dev:
+        image: "monarqpath/monarq-dev"
+        container_name: "monarq_dev"
+        ports: ["8080:8080"]
+        volumes: [".:/usr/src/app", "node_modules:/usr/src/app/node_modules"]
+        command: "npm run dev"
+volumes:
+    node_modules: {}

@@ -21,6 +21,17 @@ app.get("/", (req, res) => {
   return res.sendFile(path.resolve(__dirname, "../index.html"));
 });
 
+app.get("/public/TempLogo.PNG", (req, res) => {
+  return res
+    .status(200)
+    .sendFile(path.resolve(__dirname, "../public/TempLogo.PNG"));
+});
+
+app.get("/assets/Insta.JPG", (req, res) => {
+  return res
+    .status(200)
+    .sendFile(path.resolve(__dirname, "../assets/Insta.JPG"));
+});
 // serving bundle.js files from dist folder
 
 // if request is made to no defined endpoint
