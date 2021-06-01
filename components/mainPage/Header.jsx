@@ -12,18 +12,18 @@ const Header = () => {
       bg="brand.darkBl"
     >
       <Link to="/">
-        <Box p="0px 20px">
+        <Box p="0px 10px">
           <img
             alt="MONARQ Logo"
-            src="public/TempLogo.PNG"
+            src="public/Logo.png"
             height="75"
-            width="55"
+            width="75"
           />
         </Box>
       </Link>
       <Link to="/">
-        <Box p="10px 50px">
-          <Heading color="brand.mainO" fontFamily="'Noto Sans', sans-serif">MONARQ</Heading>
+        <Box p="10px 5px">
+          <Heading fontSize="50px" color="brand.whiteT" fontFamily="'Lexend Zetta', sans-serif">MONARQ</Heading>
         </Box>
       </Link>
       <Spacer />

@@ -24,7 +24,7 @@ const CodeBlockNPM = () => {
         textColor="brand.whiteT"
         fontSize="large"
       >
-        Download Our NPM Package
+        Download the NPM Package
       </Text>
       <Code
         style={{

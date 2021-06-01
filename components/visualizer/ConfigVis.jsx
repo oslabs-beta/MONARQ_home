@@ -9,7 +9,7 @@ hljs.registerLanguage("javascript", javascript);
 const ConfigVis = (props) => {
   const { configString } = props;
   const outputArray = [
-    `export const manifest ={
+    `export const manifest = {
       ${configString}
   }`,
   ];

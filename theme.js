@@ -9,7 +9,7 @@ const theme = extendTheme({
   },
   colors: {
     brand: {
-      mainO: "#ED8936",
+      mainO: "#f7931e",
       lightO: "#FBD38D",
       darkO: "#DD6B20",
       mainBl: "#2C5282",

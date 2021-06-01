@@ -62,18 +62,18 @@ const Visualizer = (props) => {
       point[0].method.forEach((meth) => {
         if (defaultParams !== "") {
           newConfigString.push(`
-              ${meth[0]}: {
-                operation: ${operation},
-                defaultParams: {${defaultParams}}
-              }
-            },
-            `);
+                ${meth[0]}: {
+                    operation: ${operation},
+                    defaultParams: {${defaultParams}}
+                  }
+                },
+          `);
         } else {
           newConfigString.push(`            
-          ${meth[0]}: {
-            operation: ${operation},
-            },
-          },
+                ${meth[0]}: {
+                  operation: ${operation},
+                  },
+                },
         `);
         }
       });
@@ -115,7 +115,7 @@ const Visualizer = (props) => {
       {error
         ? <GridItem colSpan={3}>{errorBox()}</GridItem> 
         : <GridItem colSpan={1} rowSpan={1}>
-            <Heading marginLeft={5} textColor="brand.whiteT" fontFamily="'Noto Sans', sans-serif">Manifest Builder</Heading>
+            <Heading marginLeft={5} textColor="brand.whiteT" fontFamily="'Lexend Zetta', sans-serif">Manifest Builder</Heading>
           </GridItem>
       }
       <GridItem colStart={1} colEnd={2} rowStart={2} marginLeft={5} bg="brand.mainBl" border="solid 1px" borderColor="brand.mainO" borderRadius="10px">
@@ -187,7 +187,6 @@ const Visualizer = (props) => {
       <GridItem colStart={2} colSpan={1} rowStart={2} rowSpan={1} marginRight={5}>
         <Box h={500} bg="#282b2e" borderRadius={9}>
           {" "}
-          ;
           <ConfigVis configString={configString} />
         </Box>
       </GridItem>
