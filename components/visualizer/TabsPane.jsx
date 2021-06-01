@@ -50,7 +50,6 @@ const TabsPane = (props) => {
                 value={`${operation.name}`}
                 name="operation"
                 key={`${operation.name}Select`}
-                marginRight={5}
               >
                 {operation.name}
               </Radio>
@@ -63,9 +62,7 @@ const TabsPane = (props) => {
     <Flex direction="column">
     <Box overflowY="scroll" maxH="200px">
       <RadioGroup onChange={setValue} value={value}>
-        <Stack>
-        {display()}
-        </Stack>
+        <Stack>{display()}</Stack>
       </RadioGroup>
     </Box>
     </Flex>

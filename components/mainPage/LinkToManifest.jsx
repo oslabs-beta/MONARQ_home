@@ -18,6 +18,7 @@ const LinkToManifest = () => {
       borderRadius="10px"
       border="solid 1px"
       borderColor="brand.mainO"
+      height="80%"
     >
       <Link to="/manifest">
         <Text

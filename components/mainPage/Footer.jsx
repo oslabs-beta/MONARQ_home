@@ -11,6 +11,7 @@ const Footer = () => {
       alignItems="center"
       textColor="brand.whiteT"
       bg="brand.darkBl"
+      paddingBottom={2}
     >
       <Box p="0px 20px">
         <h2>PATH Developers {year.getFullYear()}</h2>

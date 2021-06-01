@@ -16,6 +16,7 @@ const CodeBlockNPM = () => {
       boxShadow="sm"
       border="solid 1px"
       borderColor="brand.mainO"
+      height="80%"
     >
       <Text
         style={{
@@ -24,7 +25,7 @@ const CodeBlockNPM = () => {
         textColor="brand.whiteT"
         fontSize="large"
       >
-        Download Our NPM Package
+        Download the NPM Package
       </Text>
       <Code
         style={{

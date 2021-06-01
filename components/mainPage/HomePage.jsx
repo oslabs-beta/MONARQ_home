@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, GridItem, Image } from "@chakra-ui/react";
+import { Box, Grid, GridItem, Heading, Image } from "@chakra-ui/react";
 import DeveloperBios from "./DeveloperBios";
 import Intro from "./Intro";
 import LinkToManifest from "./LinkToManifest";
@@ -20,8 +20,17 @@ const HomePage = () => {
         justifyContent="center"
         alignItems="center"
         p="10px 10px"
+        flexGrow="1"
       >
-        <Image boxShadow="base" src="../assets/Insta.JPG" alt="Monarq" />
+        <Image 
+        boxShadow="base" 
+        src="../public/Diagram.png" 
+        alt="Monarq" 
+        borderRadius="10px" 
+        border="solid 1px" 
+        borderColor="brand.mainO"
+        height="441px"
+        width="548px"/>
       </GridItem>
       <Intro />
       <LinkToManifest />
@@ -36,8 +45,9 @@ const HomePage = () => {
         display="flex"
         flexDirection="column"
         justifyContent="center"
-        alignItems="space-evenly"
+        alignItems="center"
       >
+        <Heading paddingTop="50px" paddingBottom="40px" fontFamily="'Lexend Zetta', sans-serif">CONTRIBUTORS</Heading>
         <DeveloperBios />
       </GridItem>
     </Grid>
