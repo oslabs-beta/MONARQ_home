@@ -18,7 +18,7 @@ const Footer = () => {
       <Spacer />
       <Box p="0px 20px">
         <a href="https://opensourcelabs.io/">
-          <Button rightIcon={<ImLab />} variant="ghost">
+          <Button rightIcon={<ImLab />} variant="link">
             OS-Labs
           </Button>
         </a>

@@ -9,7 +9,6 @@ const Header = () => {
       flexDirection="row"
       justifyContent="center"
       alignItems="center"
-      textColor="brand.whiteT"
       bg="brand.darkBl"
     >
       <Link to="/">
@@ -24,7 +23,7 @@ const Header = () => {
       </Link>
       <Link to="/">
         <Box p="10px 50px">
-          <Heading>MONARQ</Heading>
+          <Heading color="brand.mainO" fontFamily="'Noto Sans', sans-serif">MONARQ</Heading>
         </Box>
       </Link>
       <Spacer />

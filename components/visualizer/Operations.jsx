@@ -1,20 +1,18 @@
 /* eslint-disable react/prop-types */
 import React, { useState, useEffect, useImperativeHandle } from "react";
+import { Flex } from "@chakra-ui/react";
 
 import Tabs from "./Tabs";
 import TabsPane from "./TabsPane";
 
 const Operations = (props) => {
-  const { setOperation } = props;
-  const { gqlURL } = props;
-  const { passedRef } = props;
+  const { setOperation, gqlURL, passedRef, isLoaded, setIsLoaded } = props;
   const introspectionQuery = {
     query:
       "{__schema {queryType {name fields {name}}mutationType {name fields {name}}}}",
   };
   const [introspectedTypes, setIntrospectedTypes] = useState({});
   const [currentTab, setCurrentTab] = useState("");
-  const [isLoaded, setIsLoaded] = useState();
 
   const getIntrospection = async () => {
     setIsLoaded(false);

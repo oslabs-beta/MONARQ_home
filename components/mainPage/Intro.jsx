@@ -10,28 +10,31 @@ const Intro = () => {
       alignItems="center"
       rowSpan={1}
       colSpan={2}
-      bg="gray.100"
+      bg="brand.mainBl"
+      borderRadius="10px"
+      border="solid 1px"
+      borderColor="brand.mainO"
       margin="5px 20px"
       boxShadow="sm"
     >
       <Heading
-        textColor="brand.darkBl"
+        textColor="brand.mainO"
         style={{ textAlign: "center" }}
-        textShadow="1px 1px"
         p="10px 10px"
-        maxWidth="75%"
+        maxWidth="80%"
+        fontFamily="'Noto Sans', sans-serif"
       >
-        Allow Your GraphQL API to accept REST API Requests
+        Enjoy the benefits of <i>both</i> GraphQL and REST 
       </Heading>
       <Text
         style={{
           textAlign: "center",
-          maxWidth: "50%",
+          maxWidth: "70%",
+          marginBottom: "20px"
         }}
-        textColor="brand.mainBl"
+        textColor="brand.whiteT"
       >
-        With a Simple Installation of our NPM Package, allow MONARQ to cocoon a
-        REST request, transform, and fly it to your GraphQL API with ease.
+        MONARQ is a lightweight NPM package that enables a GraphQL server to accept REST requests
       </Text>
     </GridItem>
   );

@@ -12,28 +12,32 @@ const LinkToManifest = () => {
       rowSpan={1}
       colSpan={1}
       textAlign="center"
-      bg="gray.50"
+      bg="brand.mainBl"
       margin="0px 20px"
       boxShadow="sm"
+      borderRadius="10px"
+      border="solid 1px"
+      borderColor="brand.mainO"
     >
       <Link to="/manifest">
         <Text
           style={{
             padding: "10px 10px",
           }}
-          textColor="brand.darkBl"
+          textColor="brand.whiteT"
           fontSize="large"
         >
           Need Help Making Your Manifest Object?
         </Text>
         <Button
           boxShadow="base"
-          textColor="brand.gray"
+          textColor="brand.whiteT"
+          colorScheme="orange"
           style={{
             padding: "10px 10px",
           }}
         >
-          Manifest Object Creation
+          Manifest Builder
         </Button>
       </Link>
     </GridItem>

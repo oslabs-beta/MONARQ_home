@@ -18,6 +18,8 @@
     "@chakra-ui/react": "^1.6.3",
     "@emotion/react": "^11.4.0",
     "@emotion/styled": "^11.3.0",
+    "@fontsource/manjari": "^4.4.2",
+    "@fontsource/sansita": "^4.4.2",
     "core-js": "^3.12.1",
     "express": "^4.17.1",
     "framer-motion": "^4.1.17",
