@@ -21,6 +21,17 @@ app.get("/", (req, res) => {
   return res.sendFile(path.resolve(__dirname, "../index.html"));
 });
 
+app.get("/public/Logo.png", (req, res) => {
+  return res
+    .status(200)
+    .sendFile(path.resolve(__dirname, "../public/Logo.png"));
+});
+
+app.get("/public/Diagram.png", (req, res) => {
+  return res
+    .status(200)
+    .sendFile(path.resolve(__dirname, "../public/Diagram.png"));
+});
 // serving bundle.js files from dist folder
 
 // if request is made to no defined endpoint

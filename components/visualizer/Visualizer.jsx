@@ -141,7 +141,13 @@ const Visualizer = (props) => {
         {!getStarted ? (
           <Instructions setStarted={setStarted} />
         ) : (
-          <Flex marginLeft={5} marginRight={5} marginTop={5} marginBottom={20} direction="column">
+          <Flex
+            marginLeft={5}
+            marginRight={5}
+            marginTop={5}
+            marginBottom={20}
+            direction="column"
+          >
             <Box marginBottom={10}>
               <Box marginBottom={3}>
                 <strong>Step 1:</strong> Enter your GraphQL URL to access the
@@ -221,7 +227,7 @@ const Visualizer = (props) => {
                   </Box>
                 </Box>
               ) : (
-                <Box/>
+                <Box />
               )}
             </Flex>
           </Flex>
