@@ -4,7 +4,16 @@
 
 Visit our website [MONARQ.io](http://monarq.io/) to see the application code in action, create the Manifest Object, and learn more about the NPM Package. 
 
-Visit [MONARQ](https://github.com/oslabs-beta/MONARQ)'s GitHub or [MONARQ](https://www.npmjs.com/package/monarq)'s page on NPM's website for further information on **MONARQ**. 
+Visit [MONARQ](https://github.com/oslabs-beta/MONARQ)'s GitHub or [MONARQ](https://www.npmjs.com/package/monarq)'s NPM page for further information on **MONARQ**. 
+
+# How To Use
+
+_Step 1:_ Navigate to the Manifest Builder within [MONARQ.io](http://monarq.io/). Then press 'Get Started'.
+
+_Step 2:_ <img src="./public/readMeImages/ManifestBuilderPart1.png">
+
+
+
 
 # Contributors
 
