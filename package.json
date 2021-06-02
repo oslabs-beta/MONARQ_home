@@ -7,6 +7,8 @@
     "start": "nodemon server/server.js",
     "build": "NODE_ENV=production webpack",
     "dev": "nodemon server/server.js & NODE_ENV=development webpack serve --open",
+    "dockerprod": "docker run --name monarq-prod -p 3000:3000 monarqpath/monarq-prod",
+    "dockerdev": "docker-compose -f docker-compose-dev.yml up",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
