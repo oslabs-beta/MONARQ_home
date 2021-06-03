@@ -60,22 +60,14 @@ const Visualizer = (props) => {
       newConfigString.push(`\n\t'${point[0].endpoint}': {`);
       point[0].method.forEach((meth) => {
         if (meth[1].defaultParams !== "") {
-          newConfigString.push(`
-                  ${meth[0]}: {
-                        operation: ${meth[1].operation},
-                        defaultParams: {${meth[1].defaultParams}}
-                  }
-              },
-            `);
+          newConfigString.push(
+            `\n\t\t${meth[0]}: {\n\t\t\toperation: ${meth[1].operation},\n\t\t\tdefaultParams: {${meth[1].defaultParams}}\n\t\t},`
+          );
         } else {
-          newConfigString.push(`            
-                  ${meth[0]}: {
-                        operation: ${meth[1].operation},
-                  }
-              },
-        `);
+          newConfigString.push(`\n\t\t${meth[0]}: {\n\t\t\toperation: ${meth[1].operation},\n\t\t},`);
         }
       });
+      newConfigString.push(`\n\t},`);
     });
     const joinedConfigString = newConfigString.join("");
     setConfigString(joinedConfigString);
