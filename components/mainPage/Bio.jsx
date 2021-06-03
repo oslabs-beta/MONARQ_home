@@ -10,7 +10,7 @@ const Bio = (props) => {
       <h2><strong>{props.name}</strong></h2>
       <h2>{props.title}</h2>
       <a href={props.linkedIn}>
-        <Button leftIcon={<GrLinkedin />} colorScheme="linkedin" variant="link">
+        <Button leftIcon={<GrLinkedin />} colorScheme="white" variant="link">
           LinkedIn
         </Button>
       </a>

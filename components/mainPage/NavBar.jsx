@@ -18,7 +18,7 @@ const NavBar = () => {
           Github
         </Button>
       </a>
-      <a href='https://www.linkedin.com/'>
+      <a href='https://www.linkedin.com/company/monarq-osl'>
         <Button
           leftIcon={<GrLinkedin />}
           variant='link'
