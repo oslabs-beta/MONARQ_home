@@ -15,7 +15,7 @@ const Bio = (props) => {
         </Button>
       </a>
       <a href={props.github}>
-        <Button leftIcon={<GrGithub />} variant="link">
+        <Button leftIcon={<GrGithub />} colorScheme="white" variant="link">
           Github
         </Button>
       </a>
