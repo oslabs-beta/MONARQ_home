@@ -32,6 +32,12 @@ app.get("/public/Diagram.png", (req, res) => {
     .status(200)
     .sendFile(path.resolve(__dirname, "../public/Diagram.png"));
 });
+
+app.get("/public/monarq32.ico", (req, res) => {
+  return res
+    .status(200)
+    .sendFile(path.resolve(__dirname, "../public/monarq32.ico"));
+});
 // serving bundle.js files from dist folder
 
 // if request is made to no defined endpoint
