@@ -7,15 +7,15 @@ import { GrLinkedin, GrGithub } from "react-icons/gr";
 const Bio = (props) => {
   return (
     <Flex direction="column" align="center" textColor="brand.whiteT">
-      <h2>{props.name}</h2>
+      <h2><strong>{props.name}</strong></h2>
       <h2>{props.title}</h2>
       <a href={props.linkedIn}>
-        <Button leftIcon={<GrLinkedin />} variant="ghost">
+        <Button leftIcon={<GrLinkedin />} colorScheme="white" variant="link">
           LinkedIn
         </Button>
       </a>
       <a href={props.github}>
-        <Button leftIcon={<GrGithub />} variant="ghost">
+        <Button leftIcon={<GrGithub />} colorScheme="white" variant="link">
           Github
         </Button>
       </a>
